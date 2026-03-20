@@ -3,45 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selamat Hari Raya Idul Fitri | Akmal Fajrianto, S.Kom</title>
-  <meta name="description" content="Ucapan Selamat Hari Raya Idul Fitri 1447 H dari Akmal Fajrianto, S.Kom beserta keluarga." />
+  <title>Ucapan Idul Fitri | Akmal Fajrianto, S.Kom</title>
+  <meta name="description" content="Ucapan Selamat Hari Raya Idul Fitri 1447 H dari Akmal Fajrianto, S.Kom beserta keluarga.">
   <style>
     :root{
       --bg-dark:#081b15;
       --bg-main:#0f3328;
       --bg-soft:#1c5a46;
       --gold:#e7c873;
-      --gold-2:#f4dfa0;
+      --gold-2:#f3dfa0;
       --cream:#f8f1df;
       --white:#ffffff;
-      --soft:#e8dfc8;
+      --soft:#e9dfc6;
       --shadow:rgba(0,0,0,.28);
+      --env:#d7b35f;
+      --env-dark:#b98e36;
+      --env-light:#efd38f;
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
+    *{margin:0;padding:0;box-sizing:border-box}
     body{
       font-family: "Segoe UI", Arial, sans-serif;
       min-height:100vh;
       color:var(--white);
-      background:
-        radial-gradient(circle at top, #245c49 0%, #123a2d 35%, #081b15 100%);
+      background: radial-gradient(circle at top, #245c49 0%, #123a2d 35%, #081b15 100%);
       overflow-x:hidden;
       position:relative;
     }
 
     body::before{
       content:"";
-      position:fixed;
-      inset:0;
+      position:fixed; inset:0;
       background:
         radial-gradient(circle at 20% 18%, rgba(255,255,255,.06) 1px, transparent 1px),
         radial-gradient(circle at 80% 28%, rgba(255,255,255,.05) 1px, transparent 1px),
@@ -52,11 +44,9 @@
       z-index:0;
     }
 
-    .hidden{
-      display:none !important;
-    }
+    .hidden{display:none !important}
 
-    .landing{
+    .screen{
       min-height:100vh;
       display:flex;
       align-items:center;
@@ -66,67 +56,195 @@
       z-index:5;
     }
 
-    .landing-card{
+    .intro-card{
       width:100%;
-      max-width:760px;
+      max-width:860px;
       text-align:center;
-      padding:36px 26px;
-      border-radius:32px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(231,200,115,.22);
-      backdrop-filter:blur(12px);
-      box-shadow:0 22px 60px var(--shadow);
+      padding:28px 20px 16px;
       position:relative;
-      overflow:hidden;
       animation:fadeUp 1s ease both;
     }
 
-    .landing-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at top center, rgba(231,200,115,.16), transparent 38%);
-      pointer-events:none;
-    }
-
-    .moon{
-      font-size:58px;
-      margin-bottom:8px;
-      animation:floatSoft 4s ease-in-out infinite;
-    }
-
-    .eyebrow{
+    .intro-title{
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:2px;
       color:var(--gold-2);
-      margin-bottom:14px;
+      margin-bottom:10px;
     }
 
-    .landing h1{
-      font-size:clamp(28px, 5vw, 48px);
-      line-height:1.2;
+    .intro-name{
+      font-size:clamp(28px, 5vw, 46px);
+      line-height:1.18;
       color:var(--cream);
-      margin-bottom:12px;
-      position:relative;
-      z-index:2;
+      font-weight:800;
+      margin-bottom:10px;
     }
 
-    .landing h2{
-      font-size:clamp(17px, 2.7vw, 24px);
+    .intro-sub{
+      font-size:clamp(16px, 2.5vw, 22px);
       color:var(--gold);
-      line-height:1.45;
-      margin-bottom:16px;
+      margin-bottom:28px;
+    }
+
+    .envelope-wrap{
       position:relative;
+      width:min(92vw, 520px);
+      height:400px;
+      margin:0 auto 18px;
+      perspective:1400px;
+    }
+
+    .glow-behind{
+      position:absolute;
+      width:360px;
+      height:360px;
+      border-radius:50%;
+      left:50%;
+      top:48%;
+      transform:translate(-50%, -50%);
+      background:radial-gradient(circle, rgba(231,200,115,.22), transparent 68%);
+      filter:blur(10px);
+      animation:pulseGlow 4.5s ease-in-out infinite;
+    }
+
+    .card-letter{
+      position:absolute;
+      left:50%;
+      bottom:72px;
+      transform:translateX(-50%) translateY(120px);
+      width:min(82%, 390px);
+      background:linear-gradient(180deg, rgba(255,255,255,.97), rgba(248,241,223,.98));
+      color:#173126;
+      border-radius:24px;
+      box-shadow:0 18px 45px rgba(0,0,0,.22);
+      padding:28px 22px;
+      z-index:2;
+      text-align:center;
+      border:1px solid rgba(185,142,54,.18);
+      opacity:.96;
+      transition:transform 1.2s cubic-bezier(.22,.9,.25,1);
+    }
+
+    .card-letter h3{
+      color:#9a7424;
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    .card-letter h2{
+      font-size:clamp(22px, 4vw, 32px);
+      color:#183126;
+      line-height:1.25;
+      margin-bottom:10px;
+    }
+
+    .card-letter p{
+      font-size:15px;
+      line-height:1.7;
+      color:#355447;
+    }
+
+    .envelope{
+      position:absolute;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      width:min(92%, 500px);
+      height:290px;
+      z-index:3;
+    }
+
+    .env-body{
+      position:absolute;
+      inset:auto 0 0 0;
+      height:210px;
+      background:linear-gradient(180deg, var(--env-light), var(--env));
+      border-radius:0 0 24px 24px;
+      box-shadow:0 18px 36px rgba(0,0,0,.22);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .env-body::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      margin:auto;
+      width:0; height:0;
+      border-left:250px solid transparent;
+      border-right:250px solid transparent;
+      border-top:150px solid rgba(185,142,54,.26);
+      opacity:.55;
+    }
+
+    .env-left, .env-right{
+      position:absolute;
+      bottom:0;
+      width:50%;
+      height:210px;
+      background:linear-gradient(180deg, #e3c06f, #c89a43);
       z-index:2;
     }
 
-    .landing p{
-      font-size:16px;
-      line-height:1.8;
-      color:var(--soft);
-      position:relative;
-      z-index:2;
+    .env-left{
+      left:0;
+      clip-path:polygon(0 0, 100% 100%, 0 100%);
+    }
+
+    .env-right{
+      right:0;
+      clip-path:polygon(100% 0, 100% 100%, 0 100%);
+    }
+
+    .env-flap{
+      position:absolute;
+      left:50%;
+      top:0;
+      transform:translateX(-50%) rotateX(0deg);
+      transform-origin:top center;
+      width:0; height:0;
+      border-left:250px solid transparent;
+      border-right:250px solid transparent;
+      border-top:155px solid var(--env-dark);
+      z-index:5;
+      filter:drop-shadow(0 8px 10px rgba(0,0,0,.12));
+      transition:transform 1.2s cubic-bezier(.22,.9,.25,1);
+      backface-visibility:hidden;
+    }
+
+    .seal{
+      position:absolute;
+      left:50%;
+      top:118px;
+      transform:translateX(-50%);
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      background:radial-gradient(circle at 35% 35%, #f6e4aa, #d6ad4f 70%);
+      color:#694f15;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      font-weight:700;
+      box-shadow:0 8px 18px rgba(0,0,0,.18);
+      z-index:6;
+      transition:opacity .5s ease;
+    }
+
+    .open .env-flap{
+      transform:translateX(-50%) rotateX(180deg);
+    }
+
+    .open .card-letter{
+      transform:translateX(-50%) translateY(-70px);
+    }
+
+    .open .seal{
+      opacity:0;
     }
 
     .btn{
@@ -140,17 +258,12 @@
     }
 
     .btn-primary{
-      margin-top:24px;
       background:linear-gradient(135deg, #f3dc95, #cfa84a);
       color:#173126;
       box-shadow:0 12px 25px rgba(231,200,115,.22);
-      position:relative;
-      z-index:2;
     }
 
-    .btn-primary:hover{
-      transform:translateY(-2px);
-    }
+    .btn-primary:hover{transform:translateY(-2px)}
 
     .btn-secondary{
       background:transparent;
@@ -158,8 +271,10 @@
       border:1px solid rgba(231,200,115,.4);
     }
 
-    .btn-secondary:hover{
-      background:rgba(255,255,255,.06);
+    .btn-secondary:hover{background:rgba(255,255,255,.06)}
+
+    .intro-actions{
+      margin-top:16px;
     }
 
     .main{
@@ -192,33 +307,8 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at top center, rgba(231,200,115,.16), transparent 36%),
-        linear-gradient(to bottom, transparent, rgba(255,255,255,.02));
+        radial-gradient(circle at top center, rgba(231,200,115,.16), transparent 36%);
       pointer-events:none;
-    }
-
-    .ornament-top{
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:110px;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(231,200,115,.12), transparent 30%),
-        radial-gradient(circle at 90% 0%, rgba(231,200,115,.12), transparent 30%);
-      pointer-events:none;
-    }
-
-    .arabesque{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      opacity:.08;
-      background-image:
-        linear-gradient(45deg, transparent 47%, rgba(255,255,255,.12) 48%, transparent 49%),
-        linear-gradient(-45deg, transparent 47%, rgba(255,255,255,.12) 48%, transparent 49%);
-      background-size:80px 80px;
-      mask-image:radial-gradient(circle at center, black 35%, transparent 90%);
     }
 
     .hero-top{
@@ -290,62 +380,13 @@
       width:min(94%, 500px);
       border-radius:28px;
       border:1px solid rgba(231,200,115,.28);
-      box-shadow:
-        0 20px 40px rgba(0,0,0,.2),
-        0 0 0 1px rgba(255,255,255,.04) inset;
+      box-shadow:0 20px 40px rgba(0,0,0,.2);
       opacity:0;
       transform:translateY(28px) scale(.95);
     }
 
     .animate-image{
-      animation:
-        imageIntro 1.7s ease forwards,
-        floatImage 5s ease-in-out 1.8s infinite;
-    }
-
-    .frame-shine{
-      position:absolute;
-      width:180px;
-      height:500px;
-      background:linear-gradient(to right, transparent, rgba(255,255,255,.18), transparent);
-      transform:rotate(22deg);
-      left:-220px;
-      top:-40px;
-      z-index:4;
-      animation:shine 5s ease-in-out infinite;
-      pointer-events:none;
-    }
-
-    .badge{
-      position:absolute;
-      z-index:4;
-      font-size:28px;
-      filter:drop-shadow(0 8px 16px rgba(0,0,0,.18));
-      opacity:.92;
-    }
-
-    .badge.ketupat-left{
-      left:4%;
-      top:40px;
-      animation:swing 3.8s ease-in-out infinite;
-    }
-
-    .badge.ketupat-right{
-      right:4%;
-      top:40px;
-      animation:swing 3.8s ease-in-out 1s infinite;
-    }
-
-    .badge.lantern-left{
-      left:14%;
-      top:100px;
-      animation:floatSoft 4s ease-in-out infinite;
-    }
-
-    .badge.lantern-right{
-      right:14%;
-      top:100px;
-      animation:floatSoft 4s ease-in-out 1s infinite;
+      animation:imageIntro 1.7s ease forwards, floatImage 5s ease-in-out 1.8s infinite;
     }
 
     .message{
@@ -402,128 +443,101 @@
       animation:particleUp linear infinite;
     }
 
-    .star{
-      position:fixed;
-      color:rgba(255,244,196,.65);
-      font-size:12px;
-      pointer-events:none;
-      z-index:1;
-      animation:twinkle 3s ease-in-out infinite;
-    }
-
     @keyframes fadeUp{
-      from{opacity:0; transform:translateY(18px);}
-      to{opacity:1; transform:translateY(0);}
+      from{opacity:0; transform:translateY(18px)}
+      to{opacity:1; transform:translateY(0)}
     }
 
     @keyframes fadeDown{
-      from{opacity:0; transform:translateY(-18px);}
-      to{opacity:1; transform:translateY(0);}
+      from{opacity:0; transform:translateY(-18px)}
+      to{opacity:1; transform:translateY(0)}
     }
 
     @keyframes imageIntro{
-      from{
-        opacity:0;
-        transform:translateY(30px) scale(.95);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-      }
+      from{opacity:0; transform:translateY(30px) scale(.95)}
+      to{opacity:1; transform:translateY(0) scale(1)}
     }
 
     @keyframes floatSoft{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-8px);}
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
     }
 
     @keyframes floatImage{
-      0%,100%{transform:translateY(0) scale(1);}
-      50%{transform:translateY(-10px) scale(1.01);}
+      0%,100%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-10px) scale(1.01)}
     }
 
     @keyframes pulseGlow{
-      0%,100%{transform:scale(1); opacity:.8;}
-      50%{transform:scale(1.08); opacity:1;}
-    }
-
-    @keyframes swing{
-      0%,100%{transform:rotate(-5deg);}
-      50%{transform:rotate(5deg);}
-    }
-
-    @keyframes shine{
-      0%{left:-220px; opacity:0;}
-      20%{opacity:.55;}
-      50%{left:110%; opacity:0;}
-      100%{left:110%; opacity:0;}
+      0%,100%{transform:scale(1); opacity:.8}
+      50%{transform:scale(1.08); opacity:1}
     }
 
     @keyframes particleUp{
-      from{
-        transform:translateY(0) scale(.8);
-        opacity:0;
-      }
-      15%{opacity:1;}
-      to{
-        transform:translateY(-110vh) scale(1.2);
-        opacity:0;
-      }
-    }
-
-    @keyframes twinkle{
-      0%,100%{opacity:.25; transform:scale(1);}
-      50%{opacity:1; transform:scale(1.3);}
+      from{transform:translateY(0) scale(.8); opacity:0}
+      15%{opacity:1}
+      to{transform:translateY(-110vh) scale(1.2); opacity:0}
     }
 
     @media (max-width:640px){
-      .landing-card, .hero, .message{
-        border-radius:24px;
+      .envelope-wrap{height:350px}
+      .envelope{height:240px}
+      .env-body,.env-left,.env-right{height:180px}
+      .env-body::before{
+        border-left:200px solid transparent;
+        border-right:200px solid transparent;
+        border-top:120px solid rgba(185,142,54,.26);
       }
-
-      .scene{
-        min-height:340px;
+      .env-flap{
+        border-left:200px solid transparent;
+        border-right:200px solid transparent;
+        border-top:125px solid var(--env-dark);
       }
-
-      .glow-ring{
-        width:300px;
-        height:300px;
-        bottom:45px;
-      }
-
-      .badge.ketupat-left{left:2%;}
-      .badge.ketupat-right{right:2%;}
-      .badge.lantern-left{left:8%; top:90px;}
-      .badge.lantern-right{right:8%; top:90px;}
+      .seal{top:95px}
+      .open .card-letter{transform:translateX(-50%) translateY(-42px)}
+      .hero,.message{border-radius:24px}
+      .scene{min-height:340px}
+      .glow-ring{width:300px;height:300px;bottom:45px}
     }
   </style>
 </head>
 <body>
 
-  <section id="landing" class="landing">
-    <div class="landing-card">
-      <div class="moon">🌙</div>
-      <div class="eyebrow">Ucapan Hari Raya Idul Fitri</div>
-      <h1>Akmal Fajrianto, S.Kom<br>beserta Keluarga</h1>
-      <h2>Selamat Hari Raya Idul Fitri 1447 Hijriah</h2>
-      <p>
-        Minal aidin wal faizin<br>
-        Mohon maaf lahir dan batin
-      </p>
-      <button id="openBtn" class="btn btn-primary">Buka Ucapan</button>
+  <section id="introScreen" class="screen">
+    <div class="intro-card">
+      <div class="intro-title">Ucapan Hari Raya Idul Fitri</div>
+      <div class="intro-name">Akmal Fajrianto, S.Kom<br>beserta Keluarga</div>
+      <div class="intro-sub">Minal aidin wal faizin · Mohon maaf lahir dan batin</div>
+
+      <div id="envelopeWrap" class="envelope-wrap">
+        <div class="glow-behind"></div>
+
+        <div class="card-letter">
+          <h3>Selamat Hari Raya</h3>
+          <h2>Idul Fitri 1447 H</h2>
+          <p>
+            Klik tombol di bawah untuk membuka ucapan
+            dan menikmati tampilan interaktif.
+          </p>
+        </div>
+
+        <div class="envelope">
+          <div class="env-flap"></div>
+          <div class="seal">✦</div>
+          <div class="env-body"></div>
+          <div class="env-left"></div>
+          <div class="env-right"></div>
+        </div>
+      </div>
+
+      <div class="intro-actions">
+        <button id="openBtn" class="btn btn-primary">Buka Ucapan</button>
+      </div>
     </div>
   </section>
 
   <main id="mainContent" class="main hidden">
     <section class="hero">
-      <div class="ornament-top"></div>
-      <div class="arabesque"></div>
-
-      <div class="badge ketupat-left">🟩</div>
-      <div class="badge ketupat-right">🟩</div>
-      <div class="badge lantern-left">🏮</div>
-      <div class="badge lantern-right">🏮</div>
-
       <div class="hero-top">
         <div class="hero-kecil">Dengan penuh syukur dan kebahagiaan</div>
         <div class="hero-name">Akmal Fajrianto, S.Kom</div>
@@ -534,8 +548,7 @@
 
       <div class="scene">
         <div class="glow-ring"></div>
-        <div class="frame-shine"></div>
-        <img id="heroImage" class="hero-image" src="ucapan.png" alt="Ucapan Idul Fitri" />
+        <img id="heroImage" class="hero-image" src="ucapan.png" alt="Ucapan Idul Fitri">
       </div>
 
       <div class="message">
@@ -546,9 +559,8 @@
         </p>
         <br>
         <p>
-          Semoga Allah melimpahkan rahmat, kesehatan, kebahagiaan, dan keberkahan
-          dalam setiap langkah, serta menjadikan hari yang fitri ini penuh cinta,
-          silaturahmi, dan kebaikan untuk kita semua.
+          Semoga Allah melimpahkan rahmat, kesehatan, kebahagiaan,
+          dan keberkahan dalam setiap langkah kita semua.
         </p>
       </div>
 
@@ -564,19 +576,20 @@
   </main>
 
   <audio id="bgMusic" loop>
-    <source src="lebaran.mp3" type="audio/mpeg" />
+    <source src="lebaran.mp3" type="audio/mpeg">
   </audio>
 
   <script>
     const openBtn = document.getElementById("openBtn");
-    const landing = document.getElementById("landing");
+    const introScreen = document.getElementById("introScreen");
+    const envelopeWrap = document.getElementById("envelopeWrap");
     const mainContent = document.getElementById("mainContent");
+    const bgMusic = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicBtn");
     const shareBtn = document.getElementById("shareBtn");
-    const bgMusic = document.getElementById("bgMusic");
     const heroImage = document.getElementById("heroImage");
 
-    function createParticles(total = 30){
+    function createParticles(total = 26){
       for(let i = 0; i < total; i++){
         const p = document.createElement("div");
         p.className = "particle";
@@ -590,31 +603,22 @@
       }
     }
 
-    function createStars(total = 18){
-      for(let i = 0; i < total; i++){
-        const s = document.createElement("div");
-        s.className = "star";
-        s.textContent = "✦";
-        s.style.left = Math.random() * 100 + "vw";
-        s.style.top = Math.random() * 100 + "vh";
-        s.style.animationDelay = (Math.random() * 3) + "s";
-        s.style.fontSize = (10 + Math.random() * 8) + "px";
-        document.body.appendChild(s);
-      }
-    }
-
     function openGreeting(){
-      landing.classList.add("hidden");
-      mainContent.classList.remove("hidden");
-      heroImage.classList.add("animate-image");
+      envelopeWrap.classList.add("open");
 
-      bgMusic.play().then(() => {
-        musicBtn.textContent = "Jeda Musik";
-      }).catch(() => {
-        musicBtn.textContent = "Putar Musik";
-      });
+      setTimeout(() => {
+        introScreen.classList.add("hidden");
+        mainContent.classList.remove("hidden");
+        heroImage.classList.add("animate-image");
 
-      window.scrollTo({ top: 0, behavior: "smooth" });
+        bgMusic.play().then(() => {
+          musicBtn.textContent = "Jeda Musik";
+        }).catch(() => {
+          musicBtn.textContent = "Putar Musik";
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1350);
     }
 
     function toggleMusic(){
@@ -629,8 +633,7 @@
 
     function shareToWhatsApp(){
       const text = "Selamat Hari Raya Idul Fitri 1447 H dari Akmal Fajrianto, S.Kom beserta Keluarga. " + window.location.href;
-      const wa = "https://wa.me/?text=" + encodeURIComponent(text);
-      window.open(wa, "_blank");
+      window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
     }
 
     openBtn.addEventListener("click", openGreeting);
@@ -638,7 +641,6 @@
     shareBtn.addEventListener("click", shareToWhatsApp);
 
     createParticles();
-    createStars();
   </script>
 </body>
 </html>
